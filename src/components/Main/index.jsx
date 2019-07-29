@@ -4,7 +4,9 @@ import { useUserStyles } from '../../css/components';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
-export default function Main({ children }) {
+import AppButton from '../AppButton';
+
+export default function Main({ children, onClick }) {
   const classes = useUserStyles();
 
   return (
@@ -12,6 +14,9 @@ export default function Main({ children }) {
       <CssBaseline />
       <Container maxWidth="sm">
         <Typography variant="h4">The Main Page</Typography>
+        <AppButton onClick={onClick}>
+          Button
+        </AppButton>
         {children}
       </Container>
     </section>

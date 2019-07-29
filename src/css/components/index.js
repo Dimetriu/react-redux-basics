@@ -5,3 +5,9 @@ export const useUserStyles = makeStyles({
     alignSelf: 'center'
   },
 });
+
+export const useButtonStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
