@@ -5,16 +5,21 @@ import React, {
 import '../../css/App.css';
 import { Facebook } from 'react-content-loader';
 
-const UserContentLoader = () => <Facebook />
-
 export default function App() {
   return (
     <main className="App">
-      <Suspense fallback={UserContentLoader}>
-        <User userName="Dimas" />
+      <Suspense fallback={<p style={{margin: 'auto'}}>Loading...</p>}>
+
+        <Main>
+          <Suspense fallback={<Facebook />}>
+            <User userName="Dimas" />
+          </Suspense>
+        </Main>
+
       </Suspense>
     </main>
   );
 }
 
 const User = lazy(() => import('../User'));
+const Main = lazy(() => import('../Main'));
