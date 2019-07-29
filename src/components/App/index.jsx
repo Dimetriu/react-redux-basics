@@ -11,7 +11,7 @@ export default function App() {
   return (
     <main className="App">
       <Suspense fallback={UserContentLoader}>
-        <User />
+        <User userName="Dimas" />
       </Suspense>
     </main>
   );
