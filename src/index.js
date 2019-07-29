@@ -7,16 +7,25 @@ import { createStore } from 'redux';
 const initialState = {
   result: 1,
   lastValues: [],
+  userName: "Max"
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD":
-      state += action.payload;
+      state = {
+        ...state,
+        result: state.result + action.payload,
+        lastValues: [...state.lastValues, action.payload]
+      };
       break;
 
     case "SUBTRACT":
-      state -= action.payload;
+      state = {
+        ...state,
+        result: state.result - action.payload,
+        lastValues: [...state.lastValues, action.payload]
+      };
       break;
 
     default:
